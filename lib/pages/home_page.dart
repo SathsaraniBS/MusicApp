@@ -6,13 +6,13 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length:6,
-      chlid:Container(
+      length: 6,
+      child: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-          colors: [
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
             Color(0xFF303151),
             Color(0xFF303151),
             ],
@@ -116,11 +116,26 @@ class HomePage extends StatelessWidget {
             ),
           ),
         ),
+
+        TabBar(
+          isScrollable: true,
+          labelStyle: TextStyle(
+            fontSize: 18,),
+          indicator: BoxDecoration(
+            border: Border(
+              bottom: BorderSide(
+                width: 3,
+                color: Color(0xFF899CCF),
+              ),
+            ),
+            ),
+          labelColor: Colors.white,)
               ],
             ),
           ),
         ),
       ),
+    ),
     );
   }
 }
