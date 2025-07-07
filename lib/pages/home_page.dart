@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
 class HomePage extends StatelessWidget {
 
+  const HomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
+    return DefaultTabController(
+      length:6,
+      chlid:Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
           colors: [
-            Color(0xFF303151).withOpacity(0.6),
-            Color(0xFF303151).withOpacity(0.9),
+            Color(0xFF303151),
+            Color(0xFF303151),
             ],
         ),
       ),
@@ -54,29 +58,72 @@ class HomePage extends StatelessWidget {
           child: Text(
             "Hello,",
             style: TextStyle(
-              color: Colors.white.withOpacity(0.9),
+              color: Colors.white,
               fontSize: 28,
               fontWeight: FontWeight.bold,
               letterSpacing: 1,
             )
           ),
         ),
-        Padding(padding: const EdgeInsets.only(bottom: 5),
-        child: Text(
+        Padding(
+          padding: const EdgeInsets.only(bottom: 5),
+          child: Text(
           "What do you want to listen to today?",
           style: TextStyle(
-            color: Colors.white.whithOpacity(0.5),
+            color: Colors.white,
             fontSize: 28,
             fontWeight: FontWeight.bold,
             letterSpacing: 1,
-          )
+          ),
         ),
-       ],
-        ),        
-      ),
+        ),
+
+        Padding(
+          padding: const EdgeInsets.only(top: 15 ,right: 20, bottom: 20 ,),
+          child: Container(
+            height: 50,
+            width: 380,
+            decoration: BoxDecoration(
+              color: Color(0xFF31314F),
+              borderRadius: BorderRadius.circular(8),
+            
+            ),
+
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Container(
+                  margin: EdgeInsets.symmetric(horizontal: 15),
+                  height: 50 ,
+                  width: 200,
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      hintText: "Search the music",
+                      hintStyle: TextStyle(
+                        color: Colors.white,),
+                        border: InputBorder.none,
+                    ),
+                  ),
+                ),
+                Padding(padding: EdgeInsets.symmetric(horizontal: 10,),
+                child: Icon(
+                  Icons.search,
+                  color: Colors.white,
+                  size: 30,
+                ),
+                )
+              ],
+            ),
+          ),
+        ),
+              ],
+            ),
+          ),
+        ),
       ),
     );
-    }
-    }
-        
-      
+  }
+}
+
+                
+               
